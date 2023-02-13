@@ -3,23 +3,23 @@
       <div class="container-fluid">
           <div class="row full-height-vh">
               <div class="col-12 d-flex align-items-center justify-content-center gradient-aqua-marine">
-                  <div class="card px-4 py-2 box-shadow-2 width-400">
+                  <div class="card box-shadow-2 width-400">
                       <div class="card-header text-center">
-                          <img src="img/logos/logo-color-big.png" alt="company-logo" class="mb-3" width="80">
+                          <img src="../../../assets/img/logos/logo-color-big.png" alt="company-logo" class="mb-3" width="80">
                           <h4 class="text-uppercase text-bold-400 grey darken-1">ورود</h4>
                       </div>
                       <div class="card-body">
                           <div class="card-block">
-                              <form>
+                              <form #loginForm="ngForm" (ngSubmit)="login()">
                                   <div class="form-group">
                                       <div class="col-md-12">
-                                          <input type="email" class="form-control form-control-lg" name="inputEmail" id="inputEmail" placeholder="ایمیل" required email>
+                                          <input [(ngModel)]="model.Username" #Username="ngModel" type="email" class="form-control form-control-lg" name="Username" id="Username" placeholder="ایمیل" required>
                                       </div>
                                   </div>
   
                                   <div class="form-group">
                                       <div class="col-md-12">
-                                          <input type="password" class="form-control form-control-lg" name="inputPass" id="inputPass" placeholder="رمز عبور" required>
+                                          <input [(ngModel)]="model.Password" required type="password" class="form-control form-control-lg" name="Password" id="Password" placeholder="رمز عبور" >
                                       </div>
                                   </div>
   
@@ -27,8 +27,8 @@
                                       <div class="row">
                                           <div class="col-md-12">
                                               <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0 ml-5">
-                                                  <input type="checkbox" class="custom-control-input" checked id="rememberme">
-                                                  <label class="custom-control-label float-left" for="rememberme">مرا به خاطر بسپار</label>
+                                                  <input [(ngModel)]="model.Isremember" type="checkbox" class="custom-control-input" checked id="Isremember" name="Isremember">
+                                                  <label class="custom-control-label vc_gitem-float-right" for="Isremember">مرا به خاطر بسپار</label>
                                               </div>
                                           </div>
                                       </div>
@@ -36,8 +36,22 @@
   
                                   <div class="form-group">
                                       <div class="text-center col-md-12">
-                                          <button type="submit" class="btn btn-danger px-4 py-2 text-uppercase white font-small-4 box-shadow-2 border-0">ارسال</button>
+                                          <button [disabled]="!loginForm.valid" type="submit" class="btn btn-danger px-4 py-2 text-uppercase white font-small-4 box-shadow-2 border-0">ارسال</button>
                                       </div>
+                                      <!-- <div>
+                                        <p>
+                                            valid: {{loginForm.valid}}
+                                        </p>
+                                        <p>
+                                            value: {{loginForm.value | json}}
+                                        </p>
+                                        <p>
+                                            dirty: {{loginForm.dirty}}
+                                        </p>
+                                        <p>
+                                            touched: {{Username.touched}}
+                                        </p>
+                                      </div> -->
                                   </div>
                               </form>
                           </div>

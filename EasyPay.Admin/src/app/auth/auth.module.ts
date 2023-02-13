@@ -7,12 +7,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
 import { authRoutes } from './routes/routes';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    FormsModule,
     RouterModule.forRoot(authRoutes)
   ],
   declarations: [
