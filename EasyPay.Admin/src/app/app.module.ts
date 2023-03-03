@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PanelModule } from './panel/panel.module';
 import { AuthModule } from './auth/auth.module';
+import { ErrorInterceptorProvider } from './services/error.interceptor';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,10 @@ import { AuthModule } from './auth/auth.module';
     AppRoutingModule,
     AuthModule,
     PanelModule,
+    HttpClientModule,
     RouterModule.forRoot(adminRoutes)
   ],
-  providers: [],
+  providers: [ErrorInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

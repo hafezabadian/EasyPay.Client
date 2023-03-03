@@ -13,13 +13,13 @@
                               <form #loginForm="ngForm" (ngSubmit)="login()">
                                   <div class="form-group">
                                       <div class="col-md-12">
-                                          <input [(ngModel)]="model.Username" #Username="ngModel" type="email" class="form-control form-control-lg" name="Username" id="Username" placeholder="ایمیل" required>
+                                          <input [(ngModel)]="model.Username" autocomplete="username" type="email" class="form-control form-control-lg" name="Username" id="Username" placeholder="ایمیل" required>
                                       </div>
                                   </div>
   
                                   <div class="form-group">
                                       <div class="col-md-12">
-                                          <input [(ngModel)]="model.Password" required type="password" class="form-control form-control-lg" name="Password" id="Password" placeholder="رمز عبور" >
+                                          <input [(ngModel)]="model.Password" autocomplete="current-password" required type="password" class="form-control form-control-lg" name="Password" id="Password" placeholder="رمز عبور" >
                                       </div>
                                   </div>
   
@@ -58,7 +58,7 @@
                       </div>
                       <div class="card-footer grey darken-1">
                           <div class="text-center mb-1">رمز عبور را فراموش کرده اید؟ <a><b>بازیابی</b></a></div>
-                          <div class="text-center">آیا حساب کاربری ندارید؟ <a><b>ثبت نام</b></a></div>
+                          <div class="text-center" [routerLink]="['/auth/register']">آیا حساب کاربری ندارید؟ <a><b>ثبت نام</b></a></div>
                       </div>
                   </div>
               </div>
