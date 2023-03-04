@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class RegisterComponent implements OnInit {
 
   model: any = {};
 
-  constructor(private authService : AuthService, private router : Router) { }
+  constructor(private authService : AuthService, private router : Router , private alertService: ToastrService) { }
 
   ngOnInit() {
   }
@@ -19,10 +20,12 @@ export class RegisterComponent implements OnInit {
   register(){
     this.authService.register(this.model).subscribe(()=>{
       console.log('success');
-      this.router.navigate(['/login'])
+      this.router.navigate(['/login']);
+      this.alertService.success('ثبت نام با موفقیت انحام شد');
     },
     error =>{
       console.log(error);
-    });
+        this.alertService.error(error,'خطا');
+      });
   }
 }

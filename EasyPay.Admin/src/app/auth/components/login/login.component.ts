@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   model: any = {};
 
-  constructor(private authService : AuthService , private router: Router) { }
+  constructor(private authService : AuthService , private router: Router, private alertService: ToastrService) { }
 
   ngOnInit() {
   }
@@ -20,9 +21,11 @@ export class LoginComponent implements OnInit {
   login(){
    this.authService.login(this.model).subscribe(Response =>{
    this.router.navigate(['/panel']);
+   this.alertService.success('خوش آمدید','ورود موفق');
   },
    error => {
     console.log(error);
+    this.alertService.error(error,'خطا');
    });
   }
 

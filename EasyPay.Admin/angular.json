@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ngx-toastr/toastr.css",
               "src/assets/fonts/feather/style.min.css",
               "src/assets/fonts/simple-line-icons/style.css",
               "src/assets/fonts/font-awesome/css/font-awesome.min.css",

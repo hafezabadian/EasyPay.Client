@@ -12,20 +12,21 @@ export class ErrorInterceptor implements HttpInterceptor {
             catchError(error => {
               if(error instanceof HttpErrorResponse){
                 if (error.status === 401) {
-                    return throwError(()=> new Error('درخواست غیر مجاز'));
+                    return throwError('درخواست غیر مجاز');
                 }
                  // error
                  const appError = error.headers.get('App-Error');
                  if (appError) {
-                     return  throwError(()=> new Error(appError));
+                     return  throwError(appError);
                  }
                    // model state error
                    const serverError = error.error.errors;
                    let modelStateError = '';
+                   let i = 1;
                    if (serverError && typeof serverError === 'object') {
                        for (const key in serverError) {
                            if (serverError[key]) {
-                               modelStateError += serverError[key] + '\n';
+                               modelStateError += i++ + '-' + serverError[key] + '\n';
                            }
                        }
                    }
@@ -34,14 +35,14 @@ export class ErrorInterceptor implements HttpInterceptor {
                    const myserverError = error.error;
                    if (myserverError && typeof myserverError === 'object') {
                        if (myserverError.status === false) {
-                           myError =new Error(myserverError.message);
+                           myError = myserverError.message;
                        }
                    }
-                   let unknowerror = new Error('خطایی رخ داده است')
+                   let unknowerror = 'خطایی رخ داده است' ;
                    return throwError(modelStateError || myError || myserverError || unknowerror );
               }
               else{
-                return throwError(()=> new Error('مشکلی است'));
+                return throwError('خطایی رخ داده است');
               }
             })
         );
