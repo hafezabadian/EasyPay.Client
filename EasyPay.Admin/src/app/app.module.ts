@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule, PB_DIRECTION, POSITION, SPINNER } from "ngx-ui-loader";
+import { AuthGuard } from './guard/auth.guard';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "#ea0025",
@@ -58,7 +59,10 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderRouterModule,
     NgxUiLoaderHttpModule.forRoot({ showForeground: true })
   ],
-  providers: [ErrorInterceptorProvider],
+  providers: [
+    ErrorInterceptorProvider,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
