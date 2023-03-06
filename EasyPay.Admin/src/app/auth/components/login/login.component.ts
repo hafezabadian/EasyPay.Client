@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   model: any = {};
 
-  constructor(private authService : AuthService , private router: Router, private alertService: ToastrService) { }
+  constructor(private authService : AuthService , private router: Router, private alertService: ToastrService,private ngxLoader: NgxUiLoaderService) { }
 
   ngOnInit() {
   }
@@ -21,11 +22,11 @@ export class LoginComponent implements OnInit {
   login(){
    this.authService.login(this.model).subscribe(Response =>{
    this.router.navigate(['/panel']);
-   this.alertService.success('خوش آمدید','ورود موفق');
+   this.alertService.success('خوش آمدید');
   },
    error => {
     console.log(error);
-    this.alertService.error(error,'خطا');
+    this.alertService.error(error);
    });
   }
 

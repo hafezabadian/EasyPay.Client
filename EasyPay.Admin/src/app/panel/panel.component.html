@@ -380,6 +380,7 @@
                       <li class="dropdown nav-item mr-0">
                           <a id="dropdownBasic3" href="#" data-toggle="dropdown" class="nav-link position-relative dropdown-user-link dropdown-toggle">
                               <span class="avatar avatar-online"><img id="navbar-avatar" src="../../assets/img/portrait/small/avatar-s-3.jpg" alt="avatar" /></span>
+                              <span style="padding: 0px 8px;">{{username}}</span>
                               <p class="d-none">تنظیمات کاربر</p>
                           </a>
                           <div aria-labelledby="dropdownBasic3" class="dropdown-menu dropdown-menu-left">
@@ -395,7 +396,7 @@
       </div>
   </nav>
 
-  <div class="main-panel">
+  <div class="main-panel" *ngIf="loggedIn()">
       <div class="main-content">
           <div class="content-wrapper">
               <div class="container-fluid">
