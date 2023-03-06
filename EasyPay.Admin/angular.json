@@ -44,11 +44,9 @@
               "src/assets/vendors/js/jquery.matchHeight-min.js",
               "src/assets/vendors/js/screenfull.min.js",
               "src/assets/vendors/js/pace/pace.min.js",
-              "src/assets/vendors/js/chartist.min.js",
               "src/assets/js/app-sidebar.js",
               "src/assets/js/notification-sidebar.js",
-              "src/assets/js/customizer.js",
-              "src/assets/js/dashboard-ecommerce.js"
+              "src/assets/js/customizer.js"
             ]
           },
           "configurations": {

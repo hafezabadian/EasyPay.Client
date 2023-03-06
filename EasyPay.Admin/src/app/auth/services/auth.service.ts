@@ -29,16 +29,6 @@ export class AuthService {
     );
   }
 
-    //decode token and return usernaame as string
-  getName():string{
-    const token = localStorage.getItem('token');
-    if(token){
-      this.decodedToken = this.jwthelper.decodeToken(token);
-      return this.decodedToken.unique_name;
-    }
-    return '';
-  }
-
   // return decoded token
   getDecodedToken(){
     const token = localStorage.getItem('token');
