@@ -46208,7 +46208,10 @@ datetime .form-group {
   color : #FF4961 !important;
 }
 .wrapper.menu-collapsed .app-sidebar:not(:hover) .navigation > li > a, .wrapper.menu-collapsed .off-canvas-sidebar:not(:hover) .navigation > li > a {
-  padding : 4px;
+  padding-top: 4px ;
+  padding-right: 5px ;
+  padding-bottom: 5px ;
+  padding-left: 4px ;
   margin-left : 8px;
   margin-right : 12px;
 }
@@ -46569,7 +46572,7 @@ margin: 0 auto;
 }
 .app-sidebar .logo, .off-canvas-sidebar .logo {
   position : relative;
-  padding : 18px 15px 18px 10px;
+  padding : 18px 10px 18px 10px;
   z-index : 4;
 }
 .app-sidebar .logo p, .off-canvas-sidebar .logo p {

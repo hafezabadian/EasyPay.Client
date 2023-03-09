@@ -8,11 +8,13 @@ const routes: Routes = [
   {path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
 
   {path: 'panel',
-  canActivate: [AuthGuard],
+  // can activate temp disable for dev reason
+  //canActivate: [AuthGuard],
   loadChildren: () => import('./panel/panel.module').then(m => m.PanelModule)
   },
 
-  {path:'**', redirectTo:'/auth/login', pathMatch:'full'}
+  //{path:'**', redirectTo:'/auth/login', pathMatch:'full'}
+  {path:'**', redirectTo:'/panel/dashboard', pathMatch:'full'}
 ];
 
 @NgModule({

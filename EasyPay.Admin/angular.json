@@ -42,11 +42,7 @@
               "src/assets/vendors/js/perfect-scrollbar.jquery.min.js",
               "src/assets/vendors/js/prism.min.js",
               "src/assets/vendors/js/jquery.matchHeight-min.js",
-              "src/assets/vendors/js/screenfull.min.js",
-              "src/assets/vendors/js/pace/pace.min.js",
-              "src/assets/js/app-sidebar.js",
-              "src/assets/js/notification-sidebar.js",
-              "src/assets/js/customizer.js"
+              "src/assets/vendors/js/pace/pace.min.js"
             ]
           },
           "configurations": {

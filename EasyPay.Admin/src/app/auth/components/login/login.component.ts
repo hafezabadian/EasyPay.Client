@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(param => this.returnurl = param['return'] || '/panel')
+    this.route.queryParams.subscribe(param => this.returnurl = param['return'] || '/panel/dashboard')
   }
 
   login(){
