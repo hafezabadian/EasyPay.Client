@@ -5385,7 +5385,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns=\'http://www
 .alert {
   position : relative;
   padding : 0.75rem 1.25rem;
-  margin-bottom : 1rem;
+  margin : 1rem 0rem;
   border : 1px solid transparent;
   border-radius : 0.25rem;
 }
@@ -40051,7 +40051,7 @@ button:hover {
   height : auto;
 }
 .card .card-block {
-  padding : 1rem 1.5rem 1.5rem;
+  /* padding : 1rem 1.5rem 1.5rem; */
 }
 .card .card-bordered {
   border : 1px solid rgba(0, 0, 0, 0.06);
@@ -40180,8 +40180,9 @@ button:hover {
   position : relative;
 }
 .card h1.card-title, .card h2.card-title, .card h3.card-title, .card h4.card-title, .card h5.card-title, .card h6.card-title {
-  font-size : 1.25rem;
+  font-size : 1.15rem;
   margin-bottom : 0.25rem;
+  font-weight: 400;
 }
 .card .card-footer {
   padding : 1rem 1.5rem;
@@ -40279,13 +40280,13 @@ form .has-icon-right .form-control {
 form .form-section {
   color : #343A40;
   line-height : 3rem;
-  font-size : 1.2rem;
-
+  font-size : 1.1rem;
+  font-weight: 400;
   margin-bottom : 20px;
   border-bottom : 1px solid #343A40;
 }
 form .form-section i {
-  font-size : 20px;
+  /* font-size : 20px; */
   margin-left : 5px;
   margin-right : 5px;
 }
@@ -46092,7 +46093,7 @@ datetime .form-group {
 }
 #user-profile .profile-with-cover .profile-cover-buttons {
   position : absolute;
-  top : 250px;
+  top : 6px;
   left : 0;
 }
 
@@ -46924,7 +46925,7 @@ margin: 0 auto;
   height : 20px;
   line-height : 20px;
   text-align : center;
-  left : 8px;
+  left : 20px;
   top : 30px;
   color : rgba(255, 255, 255, 0.55);
 }
@@ -46936,7 +46937,7 @@ margin: 0 auto;
   height : 20px;
   line-height : 20px;
   text-align : center;
-  right : 14px;
+  left : 20px;
   top : 32px;
   color : white;
 }

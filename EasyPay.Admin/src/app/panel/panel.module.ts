@@ -5,6 +5,9 @@ import { PanelRoutingModule } from './panel-routing.module';
 import { NavComponent } from './components/nav/nav.component';
 import { SideComponent } from './components/side/side.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProfileComponent } from './components/userinfo/profile/profile.component';
+import { DocumentsComponent } from './components/userinfo/documents/documents.component';
 
 @NgModule({
   imports: [
@@ -15,7 +18,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     PanelComponent,
     NavComponent,
     SideComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProfileComponent,
+    DocumentsComponent,
+    FooterComponent
   ]
 })
 export class PanelModule { }

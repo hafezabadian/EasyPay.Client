@@ -15,11 +15,11 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsPosition": "top-center",
   "bgsSize": 30,
   "bgsType": "double-bounce",
-  "blur": 0,
+  "blur": 5,
   "delay": 0,
   "fastFadeOut": true,
   "fgsColor": "#ea0025",
-  "fgsPosition": "center-center",
+  "fgsPosition": "bottom-right",
   "fgsSize": 50,
   "fgsType": "double-bounce",
   "gap": 30,
@@ -53,7 +53,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       positionClass: 'toast-top-right',
       preventDuplicates: true,
       progressBar: true,
-      progressAnimation: 'decreasing' 
+      progressAnimation: 'decreasing',
+      toastClass:'ToastOptions'
     }),
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule,
