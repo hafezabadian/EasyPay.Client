@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule, PB_DIRECTION, POSITION, SPINNER } from "ngx-ui-loader";
 import { AuthGuard } from './guard/auth.guard';
+import { JwtModule } from '@auth0/angular-jwt';
+import { environment } from 'src/environments/environment';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "#ea0025",
@@ -39,6 +41,10 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "maxTime": -1,
   "minTime": 300
 };
+
+export function getToken(){
+return localStorage.getItem('token');
+}
 @NgModule({
   declarations: [
     AppComponent
@@ -58,7 +64,15 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     }),
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule,
-    NgxUiLoaderHttpModule.forRoot({ showForeground: true })
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
+    // this Module & forroot config send jwtAuthontication token Automaticaly by any http server request to allowedDomains Except DisallowedRoutes
+    JwtModule.forRoot({
+      config:{
+        tokenGetter: getToken,
+        allowedDomains: [environment.apiUrlJwt],
+        disallowedRoutes: [environment.apiUrl + '/site/admin/auth']
+      }
+    })
   ],
   providers: [
     ErrorInterceptorProvider,
