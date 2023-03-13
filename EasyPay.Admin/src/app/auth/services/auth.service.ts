@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { map, pipe } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
-
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AuthService {
 
   constructor(private http : HttpClient) { }
-  baseurl: string = 'http://localhost:9788/site/admin/Auth/';
+  baseurl: string = environment.apiUrl + 'site/admin/Auth/';
   jwthelper = new JwtHelperService();
   
   decodedToken:any;
