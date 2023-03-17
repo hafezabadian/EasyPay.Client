@@ -8,6 +8,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/userinfo/profile/profile.component';
 import { DocumentsComponent } from './components/userinfo/documents/documents.component';
+import { UserService } from './Service/user.service';
+import { UserProfileResolver } from '../resolver/userprofile.resolver';
 import { JalaliPipe } from '../pipes/jalali.pipe';
 
 
@@ -25,6 +27,10 @@ import { JalaliPipe } from '../pipes/jalali.pipe';
     ProfileComponent,
     DocumentsComponent,
     FooterComponent
-  ]
+  ],
+  providers: [
+    UserService,
+    UserProfileResolver
+  ],
 })
 export class PanelModule { }
