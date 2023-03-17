@@ -11,16 +11,20 @@ import { CommonService } from '../services/common.service';
 })
 export class PanelComponent implements OnInit {
 
+  loadApi : any;
+
   constructor(
     private authService:AuthService,
     private commonservice: CommonService
     ) { }
 
   ngOnInit() {
-    this.commonservice.loadScript("../../../../assets/vendors/js/screenfull.min.js");
-    this.commonservice.loadScript("../../../../assets/js/app-sidebar.js");
-    this.commonservice.loadScript("../../../../assets/js/notification-sidebar.js");
-    this.commonservice.loadScript("../../../../assets/js/customizer.js");
+    this.loadApi = new Promise(resolve => {
+      this.commonservice.loadScript("../../../../assets/vendors/js/screenfull.min.js");
+      this.commonservice.loadScript("../../../../assets/js/app-sidebar.js");
+      this.commonservice.loadScript("../../../../assets/js/notification-sidebar.js");
+      this.commonservice.loadScript("../../../../assets/js/customizer.js");
+    })
   }
 
   loggedIn(){
