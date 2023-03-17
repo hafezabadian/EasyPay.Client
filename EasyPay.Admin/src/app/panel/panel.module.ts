@@ -8,6 +8,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/userinfo/profile/profile.component';
 import { DocumentsComponent } from './components/userinfo/documents/documents.component';
+import { JalaliPipe } from '../pipes/jalali.pipe';
+
 
 @NgModule({
   imports: [
@@ -15,6 +17,7 @@ import { DocumentsComponent } from './components/userinfo/documents/documents.co
     PanelRoutingModule,
   ],
   declarations: [
+    JalaliPipe,
     PanelComponent,
     NavComponent,
     SideComponent,

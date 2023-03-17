@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import * as moment from 'jalali-moment';
 
 @Component({
   selector: 'app-profile',
