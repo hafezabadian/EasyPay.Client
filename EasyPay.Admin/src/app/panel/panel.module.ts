@@ -1,13 +1,14 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PanelComponent } from './panel.component';
 import { PanelRoutingModule } from './panel-routing.module';
 import { NavComponent } from './components/nav/nav.component';
 import { SideComponent } from './components/side/side.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ProfileComponent } from './components/userinfo/profile/profile.component';
-import { DocumentsComponent } from './components/userinfo/documents/documents.component';
+import { ProfileComponent } from './components/admin/userinfo/profile/profile.component';
+import { DocumentComponent } from './components/admin/userinfo/Document/Document.component';
 import { UserService } from './Service/user.service';
 import { UserProfileResolver } from '../resolver/userprofile.resolver';
 import { JalaliPipe } from '../pipes/jalali.pipe';
@@ -17,6 +18,7 @@ import { JalaliPipe } from '../pipes/jalali.pipe';
   imports: [
     CommonModule,
     PanelRoutingModule,
+    FormsModule
   ],
   declarations: [
     JalaliPipe,
@@ -25,7 +27,7 @@ import { JalaliPipe } from '../pipes/jalali.pipe';
     SideComponent,
     DashboardComponent,
     ProfileComponent,
-    DocumentsComponent,
+    DocumentComponent,
     FooterComponent
   ],
   providers: [

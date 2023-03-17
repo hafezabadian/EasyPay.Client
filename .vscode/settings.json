@@ -14,7 +14,8 @@
         "**/.angular": true,
         "**/node_modules": true,
         "**/.vs": true,
-        "**/.hintrc": true
+        "**/.hintrc": true,
+        "**/EasyPay.App": true
     },
     "explorerExclude.backup": {}
 }
