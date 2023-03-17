@@ -1,19 +1,20 @@
-import { bankcard } from "./bankcard";
-import { photo } from "./photo";
+import { BankCard } from "./BankCard";
+import { Photo } from "./Photo";
 
-export interface user{
+
+export interface User{
     id:string;
     name: string;
-    username: string;
-    phonenumber: string;
+    userName: string;
+    phoneNumber: string;
     address: string;
     gender: boolean;
-    isactive:boolean;
+    isActive:boolean;
     age: number;
-    birthday: Date;
-    lastactive: Date;
+    dateOfBirth: Date;
+    lastActive: Date;
     city: string;
-    photourl: string;
-    photos?: photo[];
-    bankcards?: bankcard[];
+    photoUrl: string;
+    photos?: Photo[];
+    bankCards?: BankCard[];
 }

@@ -1,4 +1,4 @@
-export interface bankcard{
+export interface BankCard{
     id:string;
     bankname:string;
     ownername:string;
